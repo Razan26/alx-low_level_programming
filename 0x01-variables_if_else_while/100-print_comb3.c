@@ -7,32 +7,28 @@
  */
 int main(void)
 {
-	int i = '0';
-	int j = '0';
+	int digit1 = 0, digit2;
 
-	while (i <= '9')
+	while (digit1 <= 9)
 	{
-		while (j <= '9')
+		digit2 = 0;
+		while (digit2 <= 9)
 		{
-			if (!(i > j) || i == j)
+			if (digit1 != digit2 && digit1 < digit2)
 			{
-				putchar(i);
-				putchar(j);
-				if (i == '8' && j == '9')
-				{
-					putchar('\n');
-				}
-				else
+				putchar(digit1 + 48);
+				putchar(digit2 + 48);
+
+				if (digit1 + digit2 != 17)
 				{
 					putchar(',');
-					putchar(' ');
+					putcher(' ')
 				}
 			}
-			j++;
-
+			digit2++;
 		}
-		j = '0';
-		i++;
+		digit1++;
 	}
-return (0);
+	putchar('\n');
+	return (0);
 }
