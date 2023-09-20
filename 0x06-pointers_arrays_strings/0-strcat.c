@@ -9,20 +9,23 @@
  * Return: A pounter to the result string
  */
 
-char *_strcat(char *src, char *dest)
+char *_strcat(char *dest, char *src)
 
 {
-	int chain = 0, r;
+	int dlen = 0, r;
 
-	while (dest[chain])
+	while (dest[dlen])
 	{
-		chain++;
+		dlen++;
 	}
+
 	for (r = 0; src[r] != 0; r++)
 	{
-		dest[chain] = src[r];
-		chain++;
+		dest[dlen] = src[r];
+		dlen++;
 	}
-	dest[chain] = '\0';
+
+
+	dest[dlen] = '\0';
 	return (dest);
 }
