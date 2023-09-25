@@ -1,5 +1,5 @@
-#include <stdio.h>
 #include "main.h"
+#include <stdio.h>
 
 /**
  * print_diagsums - Point of entry
@@ -10,12 +10,19 @@
 
 void print_diagsums(int *a, int size)
 {
-	int i, n, sum1 = 0, sum2 = 0;
+	int sum1, sum2, f;
 
-	for (i = 0; i <= (size * size); i = i + size + 1)
-		sum1 = sum2 + a[i];
+	sum1 = 0;
+	sum2 = 0;
 
-	for (n = size - 1; n <= (size * size) - size; n = n + size - 1)
-		sum1 = sum2 + a[n];
+	for (f = 0; f < size; f++)
+	{
+		sum1 = sum1 + a[f * size + f];
+	}
+
+	for (f = size - 1; f >= 0; f--)
+	{
+		sum2 += a[f * size + (size - f - 1)];
+	}
 	printf("%d, %d\n", sum1, sum2);
 }
